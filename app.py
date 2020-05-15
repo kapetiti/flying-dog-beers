@@ -2,16 +2,18 @@ import dash
 import dash_core_components as dcc
 import dash_html_components as html
 import plotly.graph_objs as go
+import numpy as np
 
 ########### Define your variables
 beers=['Chesapeake Stout', 'Snake Dog IPA', 'Imperial Porter', 'Double Dog IPA']
-ibu_values=[35, 60, 85, 75]
-abv_values=[5.4, 7.1, 9.2, 4.3]
-color1='lightblue'
-color2='darkgreen'
-mytitle='Beer Comparison'
-tabtitle='beer!'
-myheading='Flying Dog Beers'
+x = np.linspace(0, 10, 1000)
+y1 = np.sin(x)
+y2 = np.cos(x)
+color1='blue'
+color2='red'
+mytitle='Shazam'
+tabtitle='!BIRL!'
+myheading='*GRÁFICOS CARALHO*'
 label1='IBU'
 label2='ABV'
 githublink='https://github.com/austinlasseter/flying-dog-beers'
@@ -19,14 +21,14 @@ sourceurl='https://www.flyingdog.com/beers/'
 
 ########### Set up the chart
 bitterness = go.Scatter(
-    x=beers,
-    y=ibu_values,
+    x=x,
+    y=y1,
     name=label1,
     marker={'color':color1}
 )
 alcohol = go.Scatter(
-    x=beers,
-    y=abv_values,
+    x=x,
+    y=y2,
     name=label2,
     marker={'color':color2}
 )
