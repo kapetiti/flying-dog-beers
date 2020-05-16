@@ -35,6 +35,12 @@ layout_home = html.Div([
 					dcc.Link([html.H1("cos(x)")], href="/page-cos"),
 				],
 			),
+			html.Div(
+				style={"margin":{"l":0, "r":0, "t":0, "b":0}, "padding":10, "height":100, "width":300, "text-align":"center"},
+				children=[
+					html.A([html.H1("GitHub")], href="https://github.com/joaopedro-vm/flying-dog-beers", target="_blank"),
+				],
+			),
 		],
 	),
 ])
@@ -62,6 +68,12 @@ layout_sin = html.Div([
 				style={"margin":{"l":0, "r":0, "t":0, "b":0}, "padding":10, "height":100, "width":300, "text-align":"center"},
 				children=[
 					dcc.Link([html.H1("cos(x)")], href="/page-cos"),
+				],
+			),
+			html.Div(
+				style={"margin":{"l":0, "r":0, "t":0, "b":0}, "padding":10, "height":100, "width":300, "text-align":"center"},
+				children=[
+					html.A([html.H1("GitHub")], href="https://github.com/joaopedro-vm/flying-dog-beers", target="_blank"),
 				],
 			),
 		],
@@ -103,6 +115,12 @@ layout_cos = html.Div([
 				style={"margin":{"l":0, "r":0, "t":0, "b":0}, "padding":10, "height":100, "width":300, "text-align":"center"},
 				children=[
 					dcc.Link([html.H1("cos(x)")], href="/page-cos"),
+				],
+			),
+			html.Div(
+				style={"margin":{"l":0, "r":0, "t":0, "b":0}, "padding":10, "height":100, "width":300, "text-align":"center"},
+				children=[
+					html.A([html.H1("GitHub")], href="https://github.com/joaopedro-vm/flying-dog-beers", target="_blank"),
 				],
 			),
 		],
