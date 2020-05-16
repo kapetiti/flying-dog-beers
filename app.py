@@ -7,14 +7,6 @@ import plotly.graph_objs as go
 import numpy as np
 
 x1 = np.linspace(0, 10, 1000)
-graph = go.Scatter(
-	x=x1,
-	y=np.sin(x1)
-)
-
-dat = [graph]
-
-beer_fig = go.Figure(data=dat)
 
 app = dash.Dash(__name__)
 server = app.server
@@ -42,7 +34,7 @@ app.layout = html.Div([
     [Input('my-slider', 'value')])
 def update_output(value):
 
-	return 'You have selected "{}"'.format(value), {"data": [{"x":x1, "y":np.sin(value*x1), "name":"sin({}x)".format(value), "showlegend":True}], "layout":{"width":500, "height":300}}
+	return 'You have selected "{}"'.format(value), {"data": [{"x":x1, "y":np.sin(value*x1), "name":"sin({}x)".format(value), "showlegend":True}], "layout":{"width":500, "height":300, "margin":{"l":0, "r":0, "t":0, "b":0}}}
 	
 
 if __name__ == '__main__':
