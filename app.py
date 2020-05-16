@@ -65,22 +65,9 @@ server = app.server
 app.title=tabtitle
 
 ########### Set up the layout
-app.layout = html.Div(children=[
-    html.H1(myheading),
-    dcc.Graph(
-        id='flyingdog',
-        figure=beer_fig
-    ),
-    html.A('Code on Github', href=githublink),
-    html.Br(),
-    html.A('Data Source', href=sourceurl),
-	html.Form(),
-    ]
-)
+
 
 if __name__ == '__main__':
-	
-	app = dash.Dash()
 
     app.layout = html.Div([
         dcc.Input(id='username', value='Initial Value', type='text'),
