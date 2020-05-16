@@ -10,10 +10,6 @@ kaggle.api.authenticate()
 kaggle.api.dataset_download_files("unanimad/corona-virus-brazil", "brazil-covid")
 os.chdir("brazil-covid")
 os.system("unzip corona-virus-brazil.zip")
-os.chdir("..")
-os.system("git add .")
-os.system("""git commit -m "update data"""")
-os.system("git push")
 
 ########### Define your variables
 beers=['Chesapeake Stout', 'Snake Dog IPA', 'Imperial Porter', 'Double Dog IPA']
