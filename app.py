@@ -65,22 +65,18 @@ server = app.server
 app.title=tabtitle
 
 ########### Set up the layout
-
+app.layout = html.Div(children=[
+    html.H1(myheading),
+    dcc.Graph(
+        id='flyingdog',
+        figure=beer_fig
+    ),
+    html.A('Code on Github', href=githublink),
+    html.Br(),
+    html.A('Data Source', href=sourceurl),
+	html.Form(),
+    ]
+)
 
 if __name__ == '__main__':
-
-    app.layout = html.Div([
-        dcc.Input(id='username', value='Initial Value', type='text'),
-        html.Button(id='submit-button', type='submit', children='Submit'),
-        html.Div(id='output_div')
-    ])
-
-    @app.callback(Output('output_div', 'children'),
-                  [Input('submit-button', 'n_clicks')],
-                  [State('username', 'value')],
-                  )
-    def update_output(clicks, input_value):
-        if clicks is not None:
-            print(clicks, input_value)
-	
     app.run_server()
