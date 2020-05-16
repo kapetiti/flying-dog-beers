@@ -12,6 +12,15 @@ app = dash.Dash(__name__)
 server = app.server
 app.title = "nsjdfkjsd"
 app.layout = html.Div([
+	html.Div(
+		style={"height":100, "background-color":"#9015BD",},
+		children=[
+			html.Div(
+				style={"margin":{"l":0, "r":0, "t":0, "b":0}, "padding":10, "height":100, "width":500, "text-align":"center"},
+				children=[html.H1("SHIT IS REAL")],
+			),
+		],
+	),
 	dcc.Graph(id='flyingdog'),
 	html.Div(
 	[
@@ -34,7 +43,7 @@ app.layout = html.Div([
     [Input('my-slider', 'value')])
 def update_output(value):
 
-	return 'Anguar Frequency: {}'.format(value), {"data": [{"x":x1, "y":np.sin(value*x1), "name":"sin({}x)".format(value), "showlegend":True}], "layout":{"width":500, "height":300, "margin":{"l":0, "r":0, "t":0, "b":0}}}
+	return 'Angular Frequency: {}'.format(value), {"data": [{"x":x1, "y":np.sin(value*x1), "name":"sin({}x)".format(value), "showlegend":True}], "layout":{"width":500, "height":300, "margin":{"l":0, "r":0, "t":0, "b":0}}}
 	
 
 if __name__ == '__main__':
