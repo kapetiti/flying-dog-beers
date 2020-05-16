@@ -9,6 +9,7 @@ import numpy as np
 x1 = np.linspace(0, 10, 1000)
 
 app = dash.Dash(__name__)
+app.config.suppress_callback_exceptions = True
 server = app.server
 app.title = "nsjdfkjsd"
 
@@ -19,19 +20,19 @@ layout_home = html.Div([
 			dcc.Location(id='url', refresh=False),
 		    html.Div(id='page-content'),
 			html.Div(
-				style={"margin":{"l":0, "r":0, "t":0, "b":0}, "padding":10, "height":100, "width":500, "text-align":"center"},
+				style={"margin":{"l":0, "r":0, "t":0, "b":0}, "padding":10, "height":100, "width":400, "text-align":"center"},
 				children=[
 					dcc.Link([html.H1("SHIT IS REAL")], href="/"),
 				],
 			),
 			html.Div(
-				style={"margin":{"l":0, "r":0, "t":0, "b":0}, "padding":10, "height":100, "width":500, "text-align":"center"},
+				style={"margin":{"l":0, "r":0, "t":0, "b":0}, "padding":10, "height":100, "width":400, "text-align":"center"},
 				children=[
 					dcc.Link([html.H1("sin(x)")], href="/page-sin"),
 				],
 			),
 			html.Div(
-				style={"margin":{"l":0, "r":0, "t":0, "b":0}, "padding":10, "height":100, "width":500, "text-align":"center"},
+				style={"margin":{"l":0, "r":0, "t":0, "b":0}, "padding":10, "height":100, "width":400, "text-align":"center"},
 				children=[
 					dcc.Link([html.H1("cos(x)")], href="/page-cos"),
 				],
@@ -41,29 +42,6 @@ layout_home = html.Div([
 ])
 
 layout_sin = html.Div([
-	html.Div(
-		style={"height":100, "background-color":"#9015BD","display":"flex"},
-		children=[
-			html.Div(
-				style={"margin":{"l":0, "r":0, "t":0, "b":0}, "padding":10, "height":100, "width":500, "text-align":"center"},
-				children=[
-					dcc.Link([html.H1("SHIT IS REAL")], href="/"),
-				],
-			),
-			html.Div(
-				style={"margin":{"l":0, "r":0, "t":0, "b":0}, "padding":10, "height":100, "width":500, "text-align":"center"},
-				children=[
-					dcc.Link([html.H1("sin(x)")], href="/page-sin"),
-				],
-			),
-			html.Div(
-				style={"margin":{"l":0, "r":0, "t":0, "b":0}, "padding":10, "height":100, "width":500, "text-align":"center"},
-				children=[
-					dcc.Link([html.H1("cos(x)")], href="/page-cos"),
-				],
-			),
-		],
-	),
 	dcc.Graph(id='graph-sin'),
 	html.Div(
 	[
@@ -81,29 +59,6 @@ layout_sin = html.Div([
 ])
 
 layout_cos = html.Div([
-	html.Div(
-		style={"height":100, "background-color":"#9015BD","display":"flex"},
-		children=[
-			html.Div(
-				style={"margin":{"l":0, "r":0, "t":0, "b":0}, "padding":10, "height":100, "width":500, "text-align":"center"},
-				children=[
-					dcc.Link([html.H1("SHIT IS REAL")], href="/"),
-				],
-			),
-			html.Div(
-				style={"margin":{"l":0, "r":0, "t":0, "b":0}, "padding":10, "height":100, "width":500, "text-align":"center"},
-				children=[
-					dcc.Link([html.H1("sin(x)")], href="/page-sin"),
-				],
-			),
-			html.Div(
-				style={"margin":{"l":0, "r":0, "t":0, "b":0}, "padding":10, "height":100, "width":500, "text-align":"center"},
-				children=[
-					dcc.Link([html.H1("cos(x)")], href="/page-cos"),
-				],
-			),
-		],
-	),
 	dcc.Graph(id='graph-cos'),
 	html.Div(
 	[
@@ -120,7 +75,12 @@ layout_cos = html.Div([
 	),
 ])
 
-app.layout = layout_home
+url_bar_and_content_div = html.Div([
+    dcc.Location(id='url', refresh=False),
+    html.Div(id='page-content')
+])
+
+app.layout = url_bar_and_content_div
 
 app.validation_layout = html.Div([
     layout_home,
