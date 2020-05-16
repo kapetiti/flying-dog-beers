@@ -28,9 +28,7 @@ app.layout = html.Div([
         value=1,
     ),
     html.Div(id='slider-output-container'),
-	dcc.Graph(
-        id='flyingdog'
-    ),
+	dcc.Graph(id='flyingdog'),
 ])
 
 
