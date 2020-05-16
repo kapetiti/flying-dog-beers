@@ -11,8 +11,10 @@ kaggle.api.authenticate()
 kaggle.api.dataset_download_files("unanimad/corona-virus-brazil", "brazil-covid")
 os.chdir("brazil-covid")
 os.system("unzip corona-virus-brazil.zip")
-p = pd.read_csv(r"brazil_covid19.csv")
 os.chdir("..")
+os.system("git add .")
+os.system('git commit -m "test"')
+os.system("git push")
 
 ########### Define your variables
 beers=['Chesapeake Stout', 'Snake Dog IPA', 'Imperial Porter', 'Double Dog IPA']
@@ -50,17 +52,6 @@ beer_layout = go.Layout(
 )
 
 beer_fig = go.Figure(data=beer_data, layout=beer_layout)
-
-a = p[p.state == "Alagoas"]
-d = np.linspace(0, 1, len(a["cases"]))
-graph = go.Scatter(
-	x=d
-	y=a["cases"]
-)
-
-dat = [graph]
-
-beer_fig = go.Figure(data=dat, layout=beer_layout)
 
 ########### Initiate the app
 external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
