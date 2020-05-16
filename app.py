@@ -7,14 +7,8 @@ import kaggle
 import os
 import pandas as pd
 
-kaggle.api.authenticate()
-kaggle.api.dataset_download_files("unanimad/corona-virus-brazil", "brazil-covid")
-os.chdir("brazil-covid")
-os.system("unzip corona-virus-brazil.zip")
-os.chdir("..")
-os.system("git add .")
-os.system('git commit -m "test"')
-os.system("git push")
+p = pd.read_csv(r"https://storage.googleapis.com/kagglesdsdata/datasets/549702/1159896/brazil_covid19.csv?GoogleAccessId=web-data@kaggle-161607.iam.gserviceaccount.com&Expires=1589853272&Signature=DKAi9dyP8LNUA7%2BOPiYrf8N23R4I5dr9sBW1iML1RQVFlyG3JfdI0S%2FRCQfgXYyYLW0Uni0ZsYkeQXLg1b5GfLIK8hehB%2B8cXJww1ZEBYCacwyPTonlcZ37GM0qOcZb3WmM5ctHt3vDEr4iIEN9p4gjuj8GqJvpsDvMt%2FrRtDP0dX%2FyKtQ8uCTARt%2BkStP7vjbV7CZBPuFeOBYdOt2Dk%2Bt%2F9qV6WgeMOnAFE1%2BkB5TKsNgNpqa%2BC8An5JR9%2BFwZS6%2B9i9Ng9h%2FLdswNY5UHgGlhtUoVegS%2F4VPWYkhcWQZU2DKGHPg9L5Raywxb4d5FDo%2FGpsK3z9iVLigoX8bsTjA%3D%3D&response-content-disposition=attachment%3B+filename%3Dbrazil_covid19.csv")
+
 
 ########### Define your variables
 beers=['Chesapeake Stout', 'Snake Dog IPA', 'Imperial Porter', 'Double Dog IPA']
@@ -52,6 +46,17 @@ beer_layout = go.Layout(
 )
 
 beer_fig = go.Figure(data=beer_data, layout=beer_layout)
+
+a = p[p.state == "Alagoas"]
+d = np.linspace(0, 1, len(a["cases"]))
+graph = go.Scatter(
+	x=d
+	y=a["cases"]
+)
+
+dat = [graph]
+
+beer_fig = go.Figure(data=dat, layout=beer_layout)
 
 ########### Initiate the app
 external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
