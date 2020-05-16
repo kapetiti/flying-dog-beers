@@ -112,7 +112,7 @@ layout_sin = html.Div([
 	),
 ])
 
-graph_states = {"data": [{"x":p[p.state==states[0]].date, "y":p[p.state==states[0]].cases, "name":"Casos", "showlegend":True}, {"x":p[p.state==states[0]].date, "y":p[p.state==states[0]].deaths, "name":"Mortes", "showlegend":True}], "layout":{"width":500, "height":300, "margin":{"l":20, "r":0, "t":20, "b":20}}}
+graph_states = {"data": [{"x":p[p.state==states[0]].date, "y":p[p.state==states[0]].cases, "name":"Casos", "showlegend":True}, {"x":p[p.state==states[0]].date, "y":p[p.state==states[0]].deaths, "name":"Mortes", "showlegend":True}], "layout":{"width":500, "height":300, "margin":{"l":40, "r":0, "t":20, "b":30}}}
 
 layout_states = html.Div([
 	html.Div(
@@ -257,7 +257,7 @@ def update_output(value):
     [Input('drop-states', 'value')])
 def update_output(value):
 
-	return {"data": [{"x":p[p.state==value].date, "y":p[p.state==value].cases, "name":"Casos", "showlegend":True}, {"x":p[p.state==value].date, "y":p[p.state==value].deaths, "name":"Mortes", "showlegend":True}], "layout":{"width":500, "height":300, "margin":{"l":20, "r":0, "t":20, "b":20}}}
+	return {"data": [{"x":p[p.state==value].date, "y":p[p.state==value].cases, "name":"Casos", "showlegend":True}, {"x":p[p.state==value].date, "y":p[p.state==value].deaths, "name":"Mortes", "showlegend":True}], "layout":{"width":500, "height":300, "margin":{"l":40, "r":0, "t":20, "b":30}}}
 
 
 @app.callback(
