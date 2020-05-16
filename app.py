@@ -28,10 +28,7 @@ app.layout = html.Div([
         value=1,
     ),
     html.Div(id='slider-output-container'),
-	html.Div(
-	style = {"width":"500px", "height":"300px"},
-	children=[dcc.Graph(id='flyingdog'),]
-	),
+	dcc.Graph(id='flyingdog'),
 ])
 
 
@@ -41,7 +38,8 @@ app.layout = html.Div([
 def update_output(value):
 
 	return 'You have selected "{}"'.format(value), 
-	{"data": [{"x":x1, "y":np.sin(value*x1), "name":"sin({}x)".format(value), "showlegend":True}]}
+	{"data": [{"x":x1, "y":np.sin(value*x1), "name":"sin({}x)".format(value), "showlegend":True}],
+	 "layout": [{"width":800, "height":500}]}
 	
 
 if __name__ == '__main__':
