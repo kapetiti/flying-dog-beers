@@ -5,20 +5,25 @@ import dash_html_components as html
 
 app = dash.Dash(__name__)
 server = app.server
-
+app.title = "nsjdfkjsd"
 app.layout = html.Div([
-   html.Label('Text Input'),
-   dcc.Input(value='MTL', type='text'),
-	
-   html.Label('Slider'),
-   dcc.Slider(
-      min=0,
-      max=9,
-      marks={i: 'Label {}'.format(i) if i == 1 else str(i) for i in range(1, 6)},
-      value=5,
-   ),
-]
-)
+    dcc.Slider(
+        id='my-slider',
+        min=0,
+        max=20,
+        step=0.5,
+        value=10,
+    ),
+    html.Div(id='slider-output-container')
+])
+
+
+@app.callback(
+    dash.dependencies.Output('slider-output-container', 'children'),
+    [dash.dependencies.Input('my-slider', 'value')])
+def update_output(value):
+    return 'You have selected "{}"'.format(value)
+
 
 if __name__ == '__main__':
-   app.run_server(debug=True)
+    app.run_server(debug=True)
