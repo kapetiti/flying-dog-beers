@@ -21,15 +21,20 @@ server = app.server
 app.title = "nsjdfkjsd"
 app.layout = html.Div([
 	dcc.Graph(id='flyingdog'),
-	html.P(id='slider-output-container'),    
-	dcc.Slider(
-        id='my-slider',
-        min=0,
-        max=20,
-        step=0.5,
-        value=1,
-		style={"width":300}
-    ),
+	html.Div(
+	[
+		html.P(id='slider-output-container'),    
+		dcc.Slider(
+		    id='my-slider',
+		    min=0,
+		    max=20,
+		    step=0.5,
+		    value=1,
+			style={"width":300}
+	    ),
+	],
+	style={"width":500}
+	),
 ])
 
 
