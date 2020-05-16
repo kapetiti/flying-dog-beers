@@ -14,7 +14,7 @@ graph = go.Scatter(
 
 dat = [graph]
 
-beer_fig = go.Figure(data=dat, layout=beer_layout)
+beer_fig = go.Figure(data=dat)
 
 app = dash.Dash(__name__)
 server = app.server
