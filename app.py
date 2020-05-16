@@ -17,8 +17,6 @@ layout_home = html.Div([
 	html.Div(
 		style={"height":100, "background-color":"#9015BD","display":"flex"},
 		children=[
-			dcc.Location(id='url', refresh=False),
-		    html.Div(id='page-content'),
 			html.Div(
 				style={"margin":{"l":0, "r":0, "t":0, "b":0}, "padding":10, "height":100, "width":400, "text-align":"center"},
 				children=[
@@ -42,6 +40,29 @@ layout_home = html.Div([
 ])
 
 layout_sin = html.Div([
+	html.Div(
+		style={"height":100, "background-color":"#9015BD","display":"flex"},
+		children=[
+			html.Div(
+				style={"margin":{"l":0, "r":0, "t":0, "b":0}, "padding":10, "height":100, "width":400, "text-align":"center"},
+				children=[
+					dcc.Link([html.H1("SHIT IS REAL")], href="/"),
+				],
+			),
+			html.Div(
+				style={"margin":{"l":0, "r":0, "t":0, "b":0}, "padding":10, "height":100, "width":400, "text-align":"center"},
+				children=[
+					dcc.Link([html.H1("sin(x)")], href="/page-sin"),
+				],
+			),
+			html.Div(
+				style={"margin":{"l":0, "r":0, "t":0, "b":0}, "padding":10, "height":100, "width":400, "text-align":"center"},
+				children=[
+					dcc.Link([html.H1("cos(x)")], href="/page-cos"),
+				],
+			),
+		],
+	),
 	dcc.Graph(id='graph-sin'),
 	html.Div(
 	[
@@ -59,6 +80,29 @@ layout_sin = html.Div([
 ])
 
 layout_cos = html.Div([
+	html.Div(
+		style={"height":100, "background-color":"#9015BD","display":"flex"},
+		children=[
+			html.Div(
+				style={"margin":{"l":0, "r":0, "t":0, "b":0}, "padding":10, "height":100, "width":400, "text-align":"center"},
+				children=[
+					dcc.Link([html.H1("SHIT IS REAL")], href="/"),
+				],
+			),
+			html.Div(
+				style={"margin":{"l":0, "r":0, "t":0, "b":0}, "padding":10, "height":100, "width":400, "text-align":"center"},
+				children=[
+					dcc.Link([html.H1("sin(x)")], href="/page-sin"),
+				],
+			),
+			html.Div(
+				style={"margin":{"l":0, "r":0, "t":0, "b":0}, "padding":10, "height":100, "width":400, "text-align":"center"},
+				children=[
+					dcc.Link([html.H1("cos(x)")], href="/page-cos"),
+				],
+			),
+		],
+	),
 	dcc.Graph(id='graph-cos'),
 	html.Div(
 	[
@@ -76,13 +120,14 @@ layout_cos = html.Div([
 ])
 
 url_bar_and_content_div = html.Div([
-    dcc.Location(id='url', refresh=False),
+    dcc.Location(id='url', refresh=True),
     html.Div(id='page-content')
 ])
 
 app.layout = url_bar_and_content_div
 
 app.validation_layout = html.Div([
+	url_bar_and_content_div,
     layout_home,
     layout_sin,
     layout_cos,
