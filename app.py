@@ -39,7 +39,7 @@ app.layout = html.Div([
     [Input('my-slider', 'value')])
 def update_output(value):
 
-	return 'You have selected "{}"'.format(value), {"data": [{"x":x1, "y":np.sin(value*x1), "name":'sin({})'.format(value)}]}
+	return 'You have selected "{}"'.format(value), {"data": [{"x":x1, "y":np.sin(value*x1), "name":"lalala"}]}
 	
 
 if __name__ == '__main__':
