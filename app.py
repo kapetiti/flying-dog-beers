@@ -2,7 +2,7 @@
 import dash
 import dash_core_components as dcc
 import dash_html_components as html
-from dash.dependencies import Input Output
+from dash.dependencies import Input, Output
 import plotly.graph_objs as go
 import numpy as np
 
@@ -36,7 +36,8 @@ app.layout = html.Div([
 
 
 @app.callback(
-    [Output('slider-output-container', 'children'), Output("flyingdog", "figure")],
+    [Output('slider-output-container', 'children'),
+	 Output('flyingdog', 'figure')],
     [Input('my-slider', 'value')])
 def update_output(value):
 	
