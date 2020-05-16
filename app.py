@@ -30,7 +30,6 @@ app.layout = html.Div([
 		    max=20,
 		    step=0.5,
 		    value=1,
-			style={"width":300}
 	    ),
 	],
 	style={"width":500}
