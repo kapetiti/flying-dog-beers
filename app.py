@@ -116,7 +116,15 @@ graph_states = {"data": [{"x":p[p.state==states[0]].date, "y":p[p.state==states[
 
 layout_states = html.Div([
 	html.Div(
-		style={"height":100, "width":"100vw", "margin-left":-8, "margin-top":-10, "background-color":"#9015BD", "display":"flex"},
+		style={"height":100, "width":"100vw", "margin-left":-8, "margin-top":-10, "background-color":"#385d84", "display":"flex"},
+		html.Div(
+        children=html.Img(
+            src="https://github.com/kapetiti/flying-dog-beers/blob/master/logo_site1.png",
+            style={
+                'maxWidth': '100%',
+                'maxHeight': '100%',
+                'marginLeft': 'auto',
+                'marginRight': 'auto'
 		children=[
 			html.Div(
 				style={"margin":{"l":0, "r":0, "t":0, "b":0}, "padding":10, "height":100, "width":300, "text-align":"center"},
