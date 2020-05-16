@@ -2,6 +2,19 @@
 import dash
 import dash_core_components as dcc
 import dash_html_components as html
+from dash.dependencies import Input Output
+import plotly.graph_objs as go
+import numpy as np
+
+x = np.linspace(0, 10, 1000)
+graph = go.Scatter(
+	x=x,
+	y=np.sin(x)
+)
+
+dat = [graph]
+
+beer_fig = go.Figure(data=dat, layout=beer_layout)
 
 app = dash.Dash(__name__)
 server = app.server
@@ -14,16 +27,32 @@ app.layout = html.Div([
         step=0.5,
         value=10,
     ),
-    html.Div(id='slider-output-container')
+    html.Div(id='slider-output-container'),
+	dcc.Graph(
+        id='flyingdog',
+        figure=beer_fig
+    ),
 ])
 
 
 @app.callback(
-    dash.dependencies.Output('slider-output-container', 'children'),
-    [dash.dependencies.Input('my-slider', 'value')])
+    [Output('slider-output-container', 'children'), Output("flyingdog", "figure")],
+    [Input('my-slider', 'value')])
 def update_output(value):
-    return 'You have selected "{}"'.format(value)
+	
+	y = np.sin(value*x)
 
+	graph = go.Scatter(
+		x=x,
+		y=np.sin(x)
+	)
+	
+	dat = [graph]
+
+	beer_fig = go.Figure(data=dat, layout=beer_layout)
+
+    return 'You have selected "{}"'.format(value), beer_fig
+	
 
 if __name__ == '__main__':
     app.run_server(debug=True)
