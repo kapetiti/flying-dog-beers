@@ -51,7 +51,7 @@ beer_layout = go.Layout(
 
 beer_fig = go.Figure(data=beer_data, layout=beer_layout)
 
-a = p[p.state="Alagoas"]
+a = p[p.state == "Alagoas"]
 d = np.linspace(0, 1, len(a["cases"]))
 graph = go.Scatter(
 	x=d
