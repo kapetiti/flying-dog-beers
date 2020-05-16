@@ -65,7 +65,7 @@ layout_sin = html.Div([
 		children=[
 			html.Div(
         children=html.Img(
-            src="https://raw.githubusercontent.com/YokoSenju/flying-dog-beers/master/image.png",
+            src="https://github.com/kapetiti/flying-dog-beers/blob/master/logo_site1.png",
             style={
                 'maxWidth': '100%',
                 'maxHeight': '100%',
