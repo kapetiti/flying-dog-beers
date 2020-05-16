@@ -20,36 +20,36 @@ app.title = "nsjdfkjsd"
 
 layout_home = html.Div([
 	html.Div(
-		style={"height":100, "background-color":"#9015BD","display":"flex"},
+		style={"height":100, "width":"100vw", "margin-left":-8, "margin-top":-10, "background-color":"#9015BD", "display":"flex"},
 		children=[
 			html.Div(
 				style={"margin":{"l":0, "r":0, "t":0, "b":0}, "padding":10, "height":100, "width":300, "text-align":"center"},
 				children=[
-					dcc.Link([html.H1("SHIT IS REAL")], href="/"),
+					dcc.Link([html.H1("SHIT IS REAL")], href="/", style={"color":"black", "text-decoration":"none"}),
 				],
 			),
 			html.Div(
 				style={"margin":{"l":0, "r":0, "t":0, "b":0}, "padding":10, "height":100, "width":300, "text-align":"center"},
 				children=[
-					dcc.Link([html.H1("sin(x)")], href="/page-sin"),
+					dcc.Link([html.H1("sin(x)")], href="/page-sin", style={"color":"black", "text-decoration":"none"}),
 				],
 			),
 			html.Div(
 				style={"margin":{"l":0, "r":0, "t":0, "b":0}, "padding":10, "height":100, "width":300, "text-align":"center"},
 				children=[
-					dcc.Link([html.H1("states")], href="/page-states"),
+					dcc.Link([html.H1("states")], href="/page-states", style={"color":"black", "text-decoration":"none"}),
 				],
 			),
 			html.Div(
 				style={"margin":{"l":0, "r":0, "t":0, "b":0}, "padding":10, "height":100, "width":300, "text-align":"center"},
 				children=[
-					dcc.Link([html.H1("cos(x)")], href="/page-cos"),
+					dcc.Link([html.H1("cos(x)")], href="/page-cos", style={"color":"black", "text-decoration":"none"}),
 				],
 			),
 			html.Div(
 				style={"margin":{"l":0, "r":0, "t":0, "b":0}, "padding":10, "height":100, "width":300, "text-align":"center"},
 				children=[
-					html.A([html.H1("GitHub")], href="https://github.com/joaopedro-vm/flying-dog-beers", target="_blank"),
+					html.A([html.H1("GitHub")], href="https://github.com/joaopedro-vm/flying-dog-beers", target="_blank", style={"color":"black", "text-decoration":"none"}),
 				],
 			),
 		],
@@ -61,36 +61,36 @@ fig_cos = {"data": [{"x":x1, "y":np.cos(x1), "name":"cos(1x)", "showlegend":True
 
 layout_sin = html.Div([
 	html.Div(
-		style={"height":100, "background-color":"#9015BD","display":"flex"},
+		style={"height":100, "width":"100vw", "margin-left":-8, "margin-top":-10, "background-color":"#9015BD", "display":"flex"},
 		children=[
 			html.Div(
 				style={"margin":{"l":0, "r":0, "t":0, "b":0}, "padding":10, "height":100, "width":300, "text-align":"center"},
 				children=[
-					dcc.Link([html.H1("SHIT IS REAL")], href="/"),
+					dcc.Link([html.H1("SHIT IS REAL")], href="/", style={"color":"black", "text-decoration":"none"}),
 				],
 			),
 			html.Div(
 				style={"margin":{"l":0, "r":0, "t":0, "b":0}, "padding":10, "height":100, "width":300, "text-align":"center"},
 				children=[
-					dcc.Link([html.H1("sin(x)")], href="/page-sin"),
+					dcc.Link([html.H1("sin(x)")], href="/page-sin", style={"color":"black", "text-decoration":"none"}),
 				],
 			),
 			html.Div(
 				style={"margin":{"l":0, "r":0, "t":0, "b":0}, "padding":10, "height":100, "width":300, "text-align":"center"},
 				children=[
-					dcc.Link([html.H1("states")], href="/page-states"),
+					dcc.Link([html.H1("states")], href="/page-states", style={"color":"black", "text-decoration":"none"}),
 				],
 			),
 			html.Div(
 				style={"margin":{"l":0, "r":0, "t":0, "b":0}, "padding":10, "height":100, "width":300, "text-align":"center"},
 				children=[
-					dcc.Link([html.H1("cos(x)")], href="/page-cos"),
+					dcc.Link([html.H1("cos(x)")], href="/page-cos", style={"color":"black", "text-decoration":"none"}),
 				],
 			),
 			html.Div(
 				style={"margin":{"l":0, "r":0, "t":0, "b":0}, "padding":10, "height":100, "width":300, "text-align":"center"},
 				children=[
-					html.A([html.H1("GitHub")], href="https://github.com/joaopedro-vm/flying-dog-beers", target="_blank"),
+					html.A([html.H1("GitHub")], href="https://github.com/joaopedro-vm/flying-dog-beers", target="_blank", style={"color":"black", "text-decoration":"none"}),
 				],
 			),
 		],
@@ -116,36 +116,36 @@ graph_states = {"data": [{"x":p[p.state==states[0]].date, "y":p[p.state==states[
 
 layout_states = html.Div([
 	html.Div(
-		style={"height":100, "background-color":"#9015BD","display":"flex"},
+		style={"height":100, "width":"100vw", "margin-left":-8, "margin-top":-10, "background-color":"#9015BD", "display":"flex"},
 		children=[
 			html.Div(
 				style={"margin":{"l":0, "r":0, "t":0, "b":0}, "padding":10, "height":100, "width":300, "text-align":"center"},
 				children=[
-					dcc.Link([html.H1("SHIT IS REAL")], href="/"),
+					dcc.Link([html.H1("SHIT IS REAL")], href="/", style={"color":"black", "text-decoration":"none"}),
 				],
 			),
 			html.Div(
 				style={"margin":{"l":0, "r":0, "t":0, "b":0}, "padding":10, "height":100, "width":300, "text-align":"center"},
 				children=[
-					dcc.Link([html.H1("sin(x)")], href="/page-sin"),
+					dcc.Link([html.H1("sin(x)")], href="/page-sin", style={"color":"black", "text-decoration":"none"}),
 				],
 			),
 			html.Div(
 				style={"margin":{"l":0, "r":0, "t":0, "b":0}, "padding":10, "height":100, "width":300, "text-align":"center"},
 				children=[
-					dcc.Link([html.H1("states")], href="/page-states"),
+					dcc.Link([html.H1("states")], href="/page-states", style={"color":"black", "text-decoration":"none"}),
 				],
 			),
 			html.Div(
 				style={"margin":{"l":0, "r":0, "t":0, "b":0}, "padding":10, "height":100, "width":300, "text-align":"center"},
 				children=[
-					dcc.Link([html.H1("cos(x)")], href="/page-cos"),
+					dcc.Link([html.H1("cos(x)")], href="/page-cos", style={"color":"black", "text-decoration":"none"}),
 				],
 			),
 			html.Div(
 				style={"margin":{"l":0, "r":0, "t":0, "b":0}, "padding":10, "height":100, "width":300, "text-align":"center"},
 				children=[
-					html.A([html.H1("GitHub")], href="https://github.com/joaopedro-vm/flying-dog-beers", target="_blank"),
+					html.A([html.H1("GitHub")], href="https://github.com/joaopedro-vm/flying-dog-beers", target="_blank", style={"color":"black", "text-decoration":"none"}),
 				],
 			),
 		],
@@ -163,40 +163,41 @@ layout_states = html.Div([
 	style={"width":500}
 	),
 	dcc.Graph(id='graph-states', figure=graph_states),
+	html.P(["Fonte: ", html.A(["kaggle/unanimad/corona-virus-brazil"], href="https://www.kaggle.com/unanimad/corona-virus-brazil", target="_blank")]),
 ])
 
 layout_cos = html.Div([
 	html.Div(
-		style={"height":100, "background-color":"#9015BD","display":"flex"},
+		style={"height":100, "width":"100vw", "margin-left":-8, "margin-top":-10, "background-color":"#9015BD", "display":"flex"},
 		children=[
 			html.Div(
 				style={"margin":{"l":0, "r":0, "t":0, "b":0}, "padding":10, "height":100, "width":300, "text-align":"center"},
 				children=[
-					dcc.Link([html.H1("SHIT IS REAL")], href="/"),
+					dcc.Link([html.H1("SHIT IS REAL")], href="/", style={"color":"black", "text-decoration":"none"}),
 				],
 			),
 			html.Div(
 				style={"margin":{"l":0, "r":0, "t":0, "b":0}, "padding":10, "height":100, "width":300, "text-align":"center"},
 				children=[
-					dcc.Link([html.H1("sin(x)")], href="/page-sin"),
+					dcc.Link([html.H1("sin(x)")], href="/page-sin", style={"color":"black", "text-decoration":"none"}),
 				],
 			),
 			html.Div(
 				style={"margin":{"l":0, "r":0, "t":0, "b":0}, "padding":10, "height":100, "width":300, "text-align":"center"},
 				children=[
-					dcc.Link([html.H1("states")], href="/page-states"),
+					dcc.Link([html.H1("states")], href="/page-states", style={"color":"black", "text-decoration":"none"}),
 				],
 			),
 			html.Div(
 				style={"margin":{"l":0, "r":0, "t":0, "b":0}, "padding":10, "height":100, "width":300, "text-align":"center"},
 				children=[
-					dcc.Link([html.H1("cos(x)")], href="/page-cos"),
+					dcc.Link([html.H1("cos(x)")], href="/page-cos", style={"color":"black", "text-decoration":"none"}),
 				],
 			),
 			html.Div(
 				style={"margin":{"l":0, "r":0, "t":0, "b":0}, "padding":10, "height":100, "width":300, "text-align":"center"},
 				children=[
-					html.A([html.H1("GitHub")], href="https://github.com/joaopedro-vm/flying-dog-beers", target="_blank"),
+					html.A([html.H1("GitHub")], href="https://github.com/joaopedro-vm/flying-dog-beers", target="_blank", style={"color":"black", "text-decoration":"none"}),
 				],
 			),
 		],
