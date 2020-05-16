@@ -64,16 +64,6 @@ layout_sin = html.Div([
 		style={"height":100, "background-color":"#9015BD","display":"flex"},
 		children=[
 			html.Div(
-        children=html.Img(
-            src="https://github.com/kapetiti/flying-dog-beers/blob/master/logo_site1.png",
-            style={
-                'maxWidth': '100%',
-                'maxHeight': '100%',
-                'marginLeft': 'auto',
-                'marginRight': 'auto'
-            }
-        ),
-			html.Div(
 				style={"margin":{"l":0, "r":0, "t":0, "b":0}, "padding":10, "height":100, "width":300, "text-align":"center"},
 				children=[
 					dcc.Link([html.H1("SHIT IS REAL")], href="/"),
