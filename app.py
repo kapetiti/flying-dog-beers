@@ -4,60 +4,43 @@ import dash_core_components as dcc
 import dash_html_components as html
 
 app = dash.Dash()
+colors = {
+   'background': '#87D653',
+   'text': '#ff0033'
+}
 
-app.layout = html.Div([
-   html.Label('Dropdown'),
-   dcc.Dropdown(
-      options=[
-         {'label': 'New York City', 'value': 'NYC'},
-         {'label': u'Montréal', 'value': 'MTL'},
-         {'label': 'San Francisco', 'value': 'SF'}
-      ],
-      value='MTL'
+app.layout = html.Div(style={'backgroundColor': colors['background']}, children=[
+   html.H1(
+      children='Hello Dash',
+      style={
+         'textAlign': 'center',
+         'color': colors['text']
+      }
    ),
 	
-   html.Label('Multi-Select Dropdown'),
-   dcc.Dropdown(
-      options=[
-         {'label': 'New York City', 'value': 'NYC'},
-         {'label': u'Montréal', 'value': 'MTL'},
-         {'label': 'San Francisco', 'value': 'SF'}
-      ],
-      value=['MTL', 'SF'],
-      multi=True
-   ),
+   html.Div(children='Dash: A web application framework for Python.', style={
+      'textAlign': 'center',
+      'color': colors['text']
+   }),
 	
-   html.Label('Radio Items'),
-   dcc.RadioItems(
-      options=[
-         {'label': 'New York City', 'value': 'NYC'},
-         {'label': u'Montréal', 'value': 'MTL'},
-         {'label': 'San Francisco', 'value': 'SF'}
-      ],
-      value='MTL'
-   ),
-	
-   html.Label('Checkboxes'),
-   dcc.Checklist(
-      options=[
-         {'label': 'New York City', 'value': 'NYC'},
-         {'label': u'Montréal', 'value': 'MTL'},
-         {'label': 'San Francisco', 'value': 'SF'}
-      ],
-      values=['MTL', 'SF']
-   ),
+   dcc.Graph(
+      id='example-graph-2',
 
-   html.Label('Text Input'),
-   dcc.Input(value='MTL', type='text'),
-	
-   html.Label('Slider'),
-   dcc.Slider(
-      min=0,
-      max=9,
-      marks={i: 'Label {}'.format(i) if i == 1 else str(i) for i in range(1, 6)},
-      value=5,
-   ),
-], style={'columnCount': 2})
+      figure={
+         'data': [
+            {'x': [1, 2, 3], 'y': [4, 1, 2], 'type': 'bar', 'name': 'Delhi'},
+            {'x': [1, 2, 3], 'y': [2, 4, 5], 'type': 'bar', 'name': u'Mumbai'},
+         ],
+         'layout': {
+            'plot_bgcolor': colors['background'],
+            'paper_bgcolor': colors['background'],
+            'font': {
+               'color': colors['text']
+            }
+         }
+      }
+   )
+])
 
 if __name__ == '__main__':
-   app.run_server()
+   app.run_server(debug=True)
