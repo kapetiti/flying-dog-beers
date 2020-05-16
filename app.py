@@ -114,13 +114,6 @@ layout_sin = html.Div([
 
 graph_states = {"data": [{"x":p[p.state==states[0]].date, "y":p[p.state==states[0]].cases, "name":"Casos", "showlegend":True}, {"x":p[p.state==states[0]].date, "y":p[p.state==states[0]].deaths, "name":"Mortes", "showlegend":True}], "layout":{"width":500, "height":300, "margin":{"l":40, "r":0, "t":20, "b":30}}}
 
-children=html.Img(
-            src="https://github.com/kapetiti/flying-dog-beers/blob/master/logo_site1.png",
-            style={
-                'maxWidth': '100%',
-                'maxHeight': '100%',
-                'marginLeft': 'auto',
-                'marginRight': 'auto'
 layout_states = html.Div([
 	html.Div(
 		style={"height":100, "width":"100vw", "margin-left":-8, "margin-top":-10, "background-color":"#385d84", "display":"flex"},
