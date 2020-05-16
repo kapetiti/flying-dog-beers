@@ -44,8 +44,6 @@ layout_sin = html.Div([
 	html.Div(
 		style={"height":100, "background-color":"#9015BD","display":"flex"},
 		children=[
-			dcc.Location(id='url', refresh=False),
-		    html.Div(id='page-content'),
 			html.Div(
 				style={"margin":{"l":0, "r":0, "t":0, "b":0}, "padding":10, "height":100, "width":500, "text-align":"center"},
 				children=[
@@ -86,8 +84,6 @@ layout_cos = html.Div([
 	html.Div(
 		style={"height":100, "background-color":"#9015BD","display":"flex"},
 		children=[
-			dcc.Location(id='url', refresh=False),
-		    html.Div(id='page-content'),
 			html.Div(
 				style={"margin":{"l":0, "r":0, "t":0, "b":0}, "padding":10, "height":100, "width":500, "text-align":"center"},
 				children=[
