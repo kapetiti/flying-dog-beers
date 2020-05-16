@@ -49,9 +49,9 @@ def update_output(value):
 	
 	dat = [graph]
 
-	beer_fig = go.Figure(data=dat, layout=beer_layout)
+	fig = go.Figure(data=dat, layout=beer_layout)
 
-	return 'You have selected "{}"'.format(value), beer_fig
+	return 'You have selected "{}"'.format(value), fig
 	
 
 if __name__ == '__main__':
