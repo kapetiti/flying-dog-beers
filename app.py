@@ -34,7 +34,7 @@ app.layout = html.Div([
     [Input('my-slider', 'value')])
 def update_output(value):
 
-	return 'You have selected "{}"'.format(value), {"data": [{"x":x1, "y":np.sin(value*x1), "name":"sin({}x)".format(value), "showlegend":True}], "layout":{"width":500, "height":300, "margin":{"l":0, "r":0, "t":0, "b":0}}}
+	return 'Anguar Frequency: {}'.format(value), {"data": [{"x":x1, "y":np.sin(value*x1), "name":"sin({}x)".format(value), "showlegend":True}], "layout":{"width":500, "height":300, "margin":{"l":0, "r":0, "t":0, "b":0}}}
 	
 
 if __name__ == '__main__':
