@@ -6,10 +6,10 @@ from dash.dependencies import Input, Output
 import plotly.graph_objs as go
 import numpy as np
 
-x = np.linspace(0, 10, 1000)
+x1 = np.linspace(0, 10, 1000)
 graph = go.Scatter(
-	x=x,
-	y=np.sin(x)
+	x=x1,
+	y=np.sin(x1)
 )
 
 dat = [graph]
@@ -39,19 +39,8 @@ app.layout = html.Div([
     [Output('slider-output-container', 'children'), Output('flyingdog', 'figure')],
     [Input('my-slider', 'value')])
 def update_output(value):
-	
-	y = np.sin(value*x)
 
-	graph = go.Scatter(
-		x=x,
-		y=np.sin(x)
-	)
-	
-	dat = [graph]
-
-	fig = go.Figure(data=dat, layout=beer_layout)
-
-	return 'You have selected "{}"'.format(value), fig
+	return 'You have selected "{}"'.format(value), {"data": [dict(x=x1, y=np.sin(value*x1))]}
 	
 
 if __name__ == '__main__':
