@@ -36,8 +36,7 @@ app.layout = html.Div([
 
 
 @app.callback(
-    [Output('slider-output-container', 'children'),
-	 Output('flyingdog', 'figure')],
+    [Output('slider-output-container', 'children'), Output('flyingdog', 'figure')],
     [Input('my-slider', 'value')])
 def update_output(value):
 	
@@ -52,7 +51,7 @@ def update_output(value):
 
 	beer_fig = go.Figure(data=dat, layout=beer_layout)
 
-    return 'You have selected "{}"'.format(value), beer_fig
+	return 'You have selected "{}"'.format(value), beer_fig
 	
 
 if __name__ == '__main__':
