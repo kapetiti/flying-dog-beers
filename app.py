@@ -39,6 +39,9 @@ layout_home = html.Div([
 	),
 ])
 
+fig_sin = {"data": [{"x":x1, "y":np.sin(x1), "name":"sin(1x)", "showlegend":True}], "layout":{"width":500, "height":300, "margin":{"l":0, "r":0, "t":0, "b":0}}}
+fig_cos = {"data": [{"x":x1, "y":np.cos(x1), "name":"cos(1x)", "showlegend":True}], "layout":{"width":500, "height":300, "margin":{"l":0, "r":0, "t":0, "b":0}}}
+
 layout_sin = html.Div([
 	html.Div(
 		style={"height":100, "background-color":"#9015BD","display":"flex"},
@@ -63,10 +66,11 @@ layout_sin = html.Div([
 			),
 		],
 	),
-	dcc.Graph(id='graph-sin'),
+	html.Div(style={"height":20}),
+	dcc.Graph(id='graph-sin', figure=fig_sin),
 	html.Div(
 	[
-		html.P(id='slider-out-sin'),    
+		html.P(id='slider-out-sin', children=['Angular Frequency: 1']),    
 		dcc.Slider(
 		    id='slider-sin',
 		    min=0,
@@ -103,10 +107,11 @@ layout_cos = html.Div([
 			),
 		],
 	),
-	dcc.Graph(id='graph-cos'),
+	html.Div(style={"height":20}),
+	dcc.Graph(id='graph-cos', figure=fig_cos),
 	html.Div(
 	[
-		html.P(id='slider-out-cos'),    
+		html.P(id='slider-out-cos', children=['Angular Frequency: 1']),    
 		dcc.Slider(
 		    id='slider-cos',
 		    min=0,
